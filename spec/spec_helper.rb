@@ -19,7 +19,7 @@ RSpec.configure do |config|
     options.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
     options.add_preference(:safebrowsing, enabled: true)
     if ENV['IS_LOCAL'].to_s.downcase != "true"
-      puts "Using chromium"
+      puts "Running on CI"
       options.binary = '/usr/bin/chromium' 
       options.add_argument('--no-sandbox') 
       options.add_argument('--disable-dev-shm-usage') 
