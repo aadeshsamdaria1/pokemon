@@ -17,7 +17,8 @@ RSpec.describe 'Pokemon Functionality', type: :feature do
       @driver.navigate.to('https://pokeapi.co/')
       sample_pokemon = 'pokemon/pikachu'
       @utils.fill_text_field(@pokemon_page.url_input, sample_pokemon)
-      @pokemon_page.submit.click
+      @utils.click_button(@pokemon_page.submit)
+      sleep(2)
       expect(@driver.page_source).to include("Resource for pikachu")
       # can write more expected here or create a method to validate the response
       # Problematic because the page is ad prone

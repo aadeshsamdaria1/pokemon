@@ -21,8 +21,6 @@ class Utils
     element.clear
     element.send_keys(value)
     element.click
-    # @driver.find_element(:css, 'body').click
-    # @driver.execute_script('document.body.click();')
   end
 
   def click_button(element)
@@ -40,8 +38,9 @@ class Utils
       puts "Executing step: #{step_description}"
       sleep(1)
       yield
-    rescue 
-      raise e
+    rescue
+      # Handle specific exceptions if needed
+      raise "Step failed: #{step_description}. Error: #{$!}"
     end
   end
   
