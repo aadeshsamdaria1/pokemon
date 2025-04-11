@@ -18,12 +18,12 @@ RSpec.configure do |config|
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
     options.add_preference(:safebrowsing, enabled: true)
-    # if ENV['IS_LOCAL'].to_s.downcase != "true"
-    #   puts "Running on CI"
-    #   options.binary = '/usr/bin/chromium' 
-    #   options.add_argument('--no-sandbox') 
-    #   options.add_argument('--disable-dev-shm-usage') 
-    # end
+    if ENV['IS_LOCAL'].to_s.downcase != "true"
+      puts "Running on CI"
+      options.binary = '/usr/bin/chromium' 
+      options.add_argument('--no-sandbox') 
+      options.add_argument('--disable-dev-shm-usage') 
+    end
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Launching Chrome @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" 

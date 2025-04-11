@@ -38,9 +38,9 @@ class Utils
       puts "Executing step: #{step_description}"
       sleep(1)
       yield
-    rescue
+    rescue StandardError => e
       # Handle specific exceptions if needed
-      raise "Step failed: #{step_description}. Error: #{$!}"
+      raise "Step failed: #{step_description}. Error: #{e}"
     end
   end
   

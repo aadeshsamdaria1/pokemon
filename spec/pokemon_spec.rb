@@ -10,6 +10,21 @@ RSpec.describe 'Pokemon Functionality', type: :feature do
     @pokemon_page = PokemonPage.new(@driver)
   end
 
+  before(:each) do |example|
+    # This will run before each test
+    puts "-------------------------------------------------------------------------------------"
+    puts "Running #{example.metadata.keys[15]}: #{example.metadata[:description]}"
+    puts "-------------------------------------------------------------------------------------"
+  end
+   
+  after(:each) do |example|
+    # This will run after each test
+    puts "-------------------------------------------------------------------------------------"
+    puts "Finished running #{example.metadata.keys[15]}: #{example.metadata[:description]}"
+    puts "-------------------------------------------------------------------------------------"
+  end
+
+
   # THESE ARE SAMPLES TO DISPLAY AUTOMATIONS OF POKEMON.CO
 
   it 'Search pokemon using pokemon name - via UI', :pokemon_1 do
