@@ -30,8 +30,6 @@ jobs:
           bundle install
 
       - name: Run RSpec tests
-        env:
-          IS_LOCAL: "false"
         run: |
           bundle exec rspec
           

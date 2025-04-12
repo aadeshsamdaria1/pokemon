@@ -23,7 +23,6 @@ RSpec.configure do |config|
     puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Launching Chrome @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" 
     @driver = Selenium::WebDriver.for :chrome, options: options
     @driver.manage.window.maximize
-    @utils = Utils.new(@driver)
   end
 
   config.after(:all) do
