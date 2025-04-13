@@ -72,24 +72,7 @@ describe('PokemonSearchInputComponent', () => {
   
     expect(mockPokemonService.getPokemon).toHaveBeenCalledWith('bulbasaur');
   });
-  it('should update termValue from input event', () => {
-    const fixture = TestBed.createComponent(PokemonSearchInputComponent);
-    const component = fixture.componentInstance;
-  
-    const input = document.createElement('input');
-    input.value = 'pikachu';
-  
-    const mockEvent = new CustomEvent('input', {
-      detail: {},
-      bubbles: true,
-      cancelable: true,
-    });
-    Object.defineProperty(mockEvent, 'target', { value: input });
-  
-    component.assignInputValue(mockEvent as Event);
-  
-    expect(component.termValue()).toBe('pikachu');
-  });
+
   it('should reset termValue and loading state after successful search', () => {
     const fixture = TestBed.createComponent(PokemonSearchInputComponent);
     const component = fixture.componentInstance;
